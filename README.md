@@ -56,17 +56,6 @@ Este proyecto **no** utiliza componentes físicos ni integración de hardware. T
 
 ---
 
-## 🏷️ Devpost (categorías patrocinadas)
-
-> Si registras este proyecto en Devpost para un hackathon patrocinado por MLH u otras marcas, usa etiquetas como:
-
-- `#MLH`
-- `#Firebase`
-- `#WebDev`
-- `#Frontend`
-- `#UX-UI`
-
----
 
 ## 📌 Estado del proyecto
 
@@ -77,8 +66,8 @@ Este proyecto **no** utiliza componentes físicos ni integración de hardware. T
 
 ## 📬 Contacto
 
-Desarrollado por el equipo interno de tecnología e innovación.  
-Contacto: **[TuNombre]** – `tunombre@email.com`
+Desarrollado por el equipo Prisma, mesa C44.  
+Contacto: **[Daniela Ortiz Blanco]** – `A00840140@tec.mx.com`
 """
 
 # Guardar como archivo
