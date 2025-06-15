@@ -71,7 +71,7 @@ Este proyecto **no** utiliza componentes físicos ni integración de hardware. T
 ## 📬 Contacto
 
 Desarrollado por el equipo Prisma, mesa C44.  
-Contacto: **[Daniela Ortiz Blanco]** – `A00840140@tec.mx.com`
+Contacto: **[Daniela Ortiz Blanco]** – `A00840140@tec.mx`
 """
 
 # Guardar como archivo
