@@ -50,7 +50,7 @@ readme_content = """
 │   └── empleados.json
 └── /firebase
     └── conexión y configuraciones
-
+```
 
 ---
 
