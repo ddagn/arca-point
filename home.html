@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Principal - Arca</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #b90000;
+    }
+
+    .bienvenida {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .panel button {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #b90000;
+      color: white;
+      cursor: pointer;
+    }
+
+    .panel button:hover {
+      background-color: #990000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Panel de navegación</h1>
+  <div class="bienvenida" id="bienvenida">Cargando nombre...</div>
+
+  <div class="panel">
+    <button onclick="location.href='mapa.html'">📍 Mapa de tiendas</button>
+    <button onclick="location.href='agenda.html'">📆 Agendar visita</button>
+    <button onclick="location.href='visitas.html'">🗓️ Ver visitas agendadas</button> <!-- 🔥 NUEVO -->
+    <button onclick="location.href='evaluacion.html'">📝 Evaluación</button>
+    <button onclick="location.href='datos.html'">📂 Base de datos</button>
+  </div>
+
+  <!-- Firebase SDK + Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+    import { firebaseConfig } from './firebase-config.js';
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const numeroEmpleado = sessionStorage.getItem("numeroEmpleado");
+
+    if (!numeroEmpleado) {
+      window.location.href = "index.html";
+    } else {
+      const bienvenidaDiv = document.getElementById("bienvenida");
+
+      async function mostrarNombre() {
+        const empleadosRef = collection(db, "empleados");
+        const q = query(empleadosRef, where("numeroEmpleado", "==", numeroEmpleado));
+        const snapshot = await getDocs(q);
+
+        if (!snapshot.empty) {
+          const empleado = snapshot.docs[0].data();
+          bienvenidaDiv.textContent = `Bienvenido, ${empleado.nombre}`;
+        } else {
+          bienvenidaDiv.textContent = `Empleado #${numeroEmpleado}`;
+        }
+      }
+
+      mostrarNombre();
+    }
+  </script>
+</body>
+</html>

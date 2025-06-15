@@ -1,0 +1,42 @@
+[
+  {
+    "numeroEmpleado": "123456",
+    "nombre": "Daniela Ortiz",
+    "posicion": "Supervisora Regional",
+    "contraseña": "arca2025",
+    "correo": "daniela.ortiz@arca.com",
+    "rol": "admin"
+  },
+  {
+    "numeroEmpleado": "234567",
+    "nombre": "Carlos Méndez",
+    "posicion": "Inspector de Zona",
+    "contraseña": "arca2025",
+    "correo": "carlos.mendez@arca.com",
+    "rol": "inspector"
+  },
+  {
+    "numeroEmpleado": "345678",
+    "nombre": "Laura Gómez",
+    "posicion": "Coordinadora de Calidad",
+    "contraseña": "arca2025",
+    "correo": "laura.gomez@arca.com",
+    "rol": "inspector"
+  },
+  {
+    "numeroEmpleado": "456789",
+    "nombre": "José Ramírez",
+    "posicion": "Asistente de Logística",
+    "contraseña": "arca2025",
+    "correo": "jose.ramirez@arca.com",
+    "rol": "soporte"
+  },
+  {
+    "numeroEmpleado": "567890",
+    "nombre": "Ana Morales",
+    "posicion": "Gerente de Operaciones",
+    "contraseña": "arca2025",
+    "correo": "ana.morales@arca.com",
+    "rol": "admin"
+  }
+]

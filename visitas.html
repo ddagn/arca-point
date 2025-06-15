@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mis visitas</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #b90000;
+      margin-bottom: 20px;
+    }
+
+    .tarjeta {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+
+    .tarjeta span {
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📋 Visitas agendadas</h2>
+  <div id="contenedorVisitas">Cargando visitas...</div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+    import { firebaseConfig } from './firebase-config.js';
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const numeroEmpleado = sessionStorage.getItem("numeroEmpleado");
+    const contenedor = document.getElementById("contenedorVisitas");
+
+    async function cargarVisitas() {
+      if (!numeroEmpleado) {
+        contenedor.innerHTML = "⚠️ Sesión no iniciada.";
+        return;
+      }
+
+      const q = query(
+        collection(db, "visitas"),
+        where("numeroEmpleado", "==", numeroEmpleado)
+      );
+
+      const snapshot = await getDocs(q);
+
+      if (snapshot.empty) {
+        contenedor.innerHTML = "No hay visitas agendadas.";
+        return;
+      }
+
+      contenedor.innerHTML = "";
+      snapshot.forEach(doc => {
+        const v = doc.data();
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "tarjeta";
+        tarjeta.innerHTML = `
+          <span><strong>🛍 Tienda:</strong> ${v.codigoTienda}</span>
+          <span><strong>📅 Fecha:</strong> ${v.fechaVisita}</span>
+          <span><strong>⏰ Hora:</strong> ${v.horaVisita}</span>
+          <span><strong>📌 Estatus:</strong> ${v.estado}</span>
+          <span><strong>#:</strong> ${v.numeroReservacion}</span>
+        `;
+        contenedor.appendChild(tarjeta);
+      });
+    }
+
+    cargarVisitas();
+  </script>
+</body>
+</html>

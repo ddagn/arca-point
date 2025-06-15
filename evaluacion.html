@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Evaluación</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+    }
+
+    .contenedor {
+      background-color: white;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #b90000;
+      margin-bottom: 20px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .comentarios {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .comentarios button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #eee;
+    }
+
+    .comentarios button.selected {
+      background-color: #b90000;
+      color: white;
+    }
+
+    #mensaje {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h2>Evaluación de la visita</h2>
+
+    <label>🔢 Código de visita:</label>
+    <input type="text" id="codigoVisita" placeholder="Ej. 123ABC">
+
+    <label>📷 Nombre de la evidencia:</label>
+    <input type="file" id="imagen">
+
+    <label>🗨️ Comentarios predeterminados:</label>
+    <div class="comentarios">
+      <button data-comentario="Excelente">Excelente</button>
+      <button data-comentario="Muy bien">Muy bien</button>
+      <button data-comentario="Deficiente">Deficiente</button>
+      <button data-comentario="Reprogramar">Reprogramar</button>
+    </div>
+
+    <label>📝 Notas adicionales:</label>
+    <textarea id="nota" rows="4" placeholder="Escribe tus observaciones..."></textarea>
+
+    <button id="guardarBtn" disabled>✅ Guardar evaluación</button>
+    <div id="mensaje"></div>
+  </div>
+
+  <script>
+    let comentarioSeleccionado = "";
+
+    const btnGuardar = document.getElementById("guardarBtn");
+
+    // Activar selección de comentario
+    document.querySelectorAll(".comentarios button").forEach(boton => {
+      boton.addEventListener("click", () => {
+        document.querySelectorAll(".comentarios button").forEach(b => b.classList.remove("selected"));
+        boton.classList.add("selected");
+        comentarioSeleccionado = boton.getAttribute("data-comentario");
+        validarCampos();
+      });
+    });
+
+    function validarCampos() {
+      const codigo = document.getElementById("codigoVisita").value.trim();
+      const nota = document.getElementById("nota").value.trim();
+      const imagen = document.getElementById("imagen").files.length > 0;
+
+      btnGuardar.disabled = !(codigo && (nota || comentarioSeleccionado) && imagen);
+    }
+
+    document.getElementById("codigoVisita").addEventListener("input", validarCampos);
+    document.getElementById("nota").addEventListener("input", validarCampos);
+    document.getElementById("imagen").addEventListener("change", validarCampos);
+
+    btnGuardar.addEventListener("click", () => {
+      const codigo = document.getElementById("codigoVisita").value.trim();
+      const nota = document.getElementById("nota").value.trim();
+      const archivo = document.getElementById("imagen").files[0]?.name || "Sin imagen";
+
+      const fila = `"${codigo}","${comentarioSeleccionado}","${nota}","${archivo}"\n`;
+
+      let csv = sessionStorage.getItem("evaluacionesCSV") ||
+        '"ID Visita","Comentario","Nota","NombreArchivo"\n';
+      csv += fila;
+      sessionStorage.setItem("evaluacionesCSV", csv);
+
+      // Descargar CSV
+      const blob = new Blob([csv], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "evaluaciones.csv";
+      a.click();
+      URL.revokeObjectURL(url);
+
+      document.getElementById("mensaje").textContent = "✅ Evaluación guardada y CSV descargado";
+      btnGuardar.disabled = true;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+[
+  {
+    "codigo": "OX001",
+    "nombre": "OXXO Paseo del Acueducto",
+    "lat": 25.624479,
+    "lng": -100.299826,
+    "descripcion": "NPS: 39.9, FillRate: 97.7%, Damage: 0.55",
+    "encargado": "Doraima Pérez",
+    "imagen": "assets/a1.jfif"
+  },
+  {
+    "codigo": "OX002",
+    "nombre": "Oxxo Junco de la Vega",
+    "lat": 25.653822,
+    "lng": -100.289604,
+    "descripcion": "NPS: 27.2, FillRate: 100.1%, Damage: 0.76",
+    "encargado": "Javier Rodríguez",
+    "imagen": "assets/a2.jfif"
+  },
+  {
+    "codigo": "OX003",
+    "nombre": "Plaza Nuevo Sur",
+    "lat": 25.653573,
+    "lng": -100.275643,
+    "descripcion": "NPS: 43.0, FillRate: 96.9%, Damage: 0.18",
+    "encargado": "Ignacio Martínez",
+    "imagen": "assets/a3.jfif"
+  },
+  {
+    "codigo": "OX004",
+    "nombre": "OXXO Platón Sánchez",
+    "lat": 25.673411,
+    "lng": -100.303164,
+    "descripcion": "NPS: 60.5, FillRate: 100.1%, Damage: 0.54",
+    "encargado": "",
+    "imagen": "assets/a4.jfif"
+  },
+  {
+    "codigo": "OX005",
+    "nombre": "Oxxo COLIMA II",
+    "lat": 25.65973,
+    "lng": -100.321617,
+    "descripcion": "NPS: 25.3, FillRate: 91.8%, Damage: 0.55",
+    "encargado": "",
+    "imagen": "assets/a5.jpg"
+  },
+  {
+    "codigo": "OX006",
+    "nombre": "Oxxo Av. Eugenio",
+    "lat": 25.655385,
+    "lng": -100.294211,
+    "descripcion": "NPS: 25.3, FillRate: 98.6%, Damage: 0.66",
+    "encargado": "",
+    "imagen": "assets/a6.jfif"
+  },
+  {
+    "codigo": "OX007",
+    "nombre": "El Primer OXXO linda vista",
+    "lat": 25.692788,
+    "lng": -100.254334,
+    "descripcion": "NPS: 61.6, FillRate: 97.2%, Damage: 7.0",
+    "encargado": "",
+    "imagen": "assets/a7.jfif"
+  },
+  {
+    "codigo": "OX008",
+    "nombre": "Oxxo Nueva Independencia",
+    "lat": 25.654084,
+    "lng": -100.305814,
+    "descripcion": "NPS: 45.3, FillRate: 96.4%, Damage: 0.24",
+    "encargado": "",
+    "imagen": "assets/a8.jfif"
+  },
+  {
+    "codigo": "OX009",
+    "nombre": "OXXO PABELLON M ( Oxxo temática M&M )",
+    "lat": 25.66628,
+    "lng": -100.316893,
+    "descripcion": "NPS: 20.6, FillRate: 97.2%, Damage: 0.6",
+    "encargado": "",
+    "imagen": "assets/a9.jpg"
+  },
+  {
+    "codigo": "OX010",
+    "nombre": "Oxxo Nazas",
+    "lat": 25.641375,
+    "lng": -100.304822,
+    "descripcion": "NPS: 40.9, FillRate: 93.0%, Damage: 0.56",
+    "encargado": "",
+    "imagen": "assets/a10.jpg"
+  },
+  {
+    "codigo": "OX011",
+    "nombre": "OXXO Libertad",
+    "lat": 25.656195,
+    "lng": -100.302125,
+    "descripcion": "NPS: 20.7, FillRate: 96.6%, Damage: 0.55",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX012",
+    "nombre": "Oxxo Más palomas",
+    "lat": 25.634569,
+    "lng": -100.284129,
+    "descripcion": "NPS: 20.7, FillRate: 97.7%, Damage: 0.57",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX013",
+    "nombre": "Oxxo Elizondo",
+    "lat": 25.644417,
+    "lng": -100.297085,
+    "descripcion": "NPS: 34.8, FillRate: 100.0%, Damage: 0.36",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX014",
+    "nombre": "7-Eleven Av. Del Estado",
+    "lat": 25.651034,
+    "lng": -100.29252,
+    "descripcion": "NPS: -8.3, FillRate: 96.0%, Damage: 0.55",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX015",
+    "nombre": "7-Eleven Alameda",
+    "lat": 25.676645,
+    "lng": -100.323056,
+    "descripcion": "NPS: -4.5, FillRate: 95.4%, Damage: 0.56",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX016",
+    "nombre": "7-Eleven Río Salado",
+    "lat": 25.648059,
+    "lng": -100.296155,
+    "descripcion": "NPS: 18.8, FillRate: 96.0%, Damage: 0.36",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX017",
+    "nombre": "7-Eleven Nuevo Repueblo",
+    "lat": 25.663293,
+    "lng": -100.297476,
+    "descripcion": "NPS: 9.7, FillRate: 98.8%, Damage: 0.87",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX018",
+    "nombre": "7-Eleven Florencio Antillón",
+    "lat": 25.669437,
+    "lng": -100.301806,
+    "descripcion": "NPS: 36.3, FillRate: 97.7%, Damage: 0.59",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX019",
+    "nombre": "7-Eleven Constitución",
+    "lat": 25.666187,
+    "lng": -100.303931,
+    "descripcion": "NPS: 11.8, FillRate: 95.9%, Damage: 0.26",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX020",
+    "nombre": "7-Eleven Benito Juarez",
+    "lat": 25.681222,
+    "lng": -100.313867,
+    "descripcion": "NPS: 1.8, FillRate: 98.0%, Damage: 0.63",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX021",
+    "nombre": "7-Eleven Parque Tecnológico",
+    "lat": 25.648433,
+    "lng": -100.293093,
+    "descripcion": "NPS: 59.3, FillRate: 97.2%, Damage: 0.31",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX022",
+    "nombre": "7-Eleven Av. Fundadores",
+    "lat": 25.639296,
+    "lng": -100.320386,
+    "descripcion": "NPS: 25.5, FillRate: 98.9%, Damage: 0.66",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX023",
+    "nombre": "7-Eleven Galeana",
+    "lat": 25.671518,
+    "lng": -100.313294,
+    "descripcion": "NPS: 31.4, FillRate: 95.6%, Damage: 0.73",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX024",
+    "nombre": "Modelorama Río Nazas",
+    "lat": 25.641548,
+    "lng": -100.304546,
+    "descripcion": "NPS: 1.5, FillRate: 96.3%, Damage: 0.34",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX025",
+    "nombre": "Modelorama Np-Mod. Heroes Del 47",
+    "lat": 25.689447,
+    "lng": -100.298138,
+    "descripcion": "NPS: 19.1, FillRate: 96.2%, Damage: 0.69",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX026",
+    "nombre": "Modelorama Texcoco",
+    "lat": 25.6678,
+    "lng": -100.272931,
+    "descripcion": "NPS: 100.0, FillRate: 94.1%, Damage: 0.58",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX027",
+    "nombre": "Modelorama Priv San Miguel 105",
+    "lat": 25.676355,
+    "lng": -100.271653,
+    "descripcion": "NPS: 7.0, FillRate: 97.6%, Damage: 0.66",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX028",
+    "nombre": "Modelorama Np-Mod Estadio",
+    "lat": 25.669318,
+    "lng": -100.23917,
+    "descripcion": "NPS: 37.5, FillRate: 97.5%, Damage: 0.88",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX029",
+    "nombre": "Modelorama Np Villa",
+    "lat": 25.673068,
+    "lng": -100.236682,
+    "descripcion": "NPS: 18.0, FillRate: 97.0%, Damage: 0.45",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX030",
+    "nombre": "Modelorama NP Los Rosales",
+    "lat": 25.629598,
+    "lng": -100.29411,
+    "descripcion": "NPS: 24.2, FillRate: 82.0%, Damage: 0.35",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX031",
+    "nombre": "Modelorama Np-Mod Abrazo De Acatempan",
+    "lat": 25.698734,
+    "lng": -100.259837,
+    "descripcion": "NPS: 18.0, FillRate: 94.2%, Damage: 0.32",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX032",
+    "nombre": "Modelorama Np-Mod. Buenos Aires",
+    "lat": 25.657515,
+    "lng": -100.283983,
+    "descripcion": "NPS: 67.0, FillRate: 96.2%, Damage: 0.34",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX033",
+    "nombre": "Modelorama NP-Mod Bernardo Reyes",
+    "lat": 25.705621,
+    "lng": -100.325968,
+    "descripcion": "NPS: 29.7, FillRate: 96.3%, Damage: 0.48",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX034",
+    "nombre": "Tiendas Six Alfonso Reyes",
+    "lat": 25.692518,
+    "lng": -100.316677,
+    "descripcion": "NPS: -95.0, FillRate: 95.4%, Damage: 0.57",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX035",
+    "nombre": "Tiendas Six Cuauhtémoc Nte",
+    "lat": 25.678131,
+    "lng": -100.265572,
+    "descripcion": "NPS: 46.5, FillRate: 96.7%, Damage: 0.56",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX036",
+    "nombre": "Tiendas Six Leandro Mtz",
+    "lat": 25.688074,
+    "lng": -100.283141,
+    "descripcion": "NPS: 5.6, FillRate: 97.8%, Damage: 0.67",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX037",
+    "nombre": "Tiendas Six Huajuco",
+    "lat": 25.659665,
+    "lng": -100.271647,
+    "descripcion": "NPS: 34.2, FillRate: 100.8%, Damage: 0.5",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX038",
+    "nombre": "Tiendas Six Thomas A. Edison",
+    "lat": 25.695617,
+    "lng": -100.332161,
+    "descripcion": "NPS: -9.2, FillRate: 97.3%, Damage: 0.79",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX039",
+    "nombre": "Tiendas Six Julián Villagrán",
+    "lat": 25.694024,
+    "lng": -100.321653,
+    "descripcion": "NPS: 3.4, FillRate: 97.5%, Damage: 0.45",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX040",
+    "nombre": "Tienda Six Chiapas",
+    "lat": 25.652094,
+    "lng": -100.30295,
+    "descripcion": "NPS: 33.9, FillRate: 96.9%, Damage: 1.04",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX041",
+    "nombre": "Tiendas Six José M. Jiménez",
+    "lat": 25.68391,
+    "lng": -100.316185,
+    "descripcion": "NPS: 44.8, FillRate: 93.2%, Damage: 0.63",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX042",
+    "nombre": "Tiendas Six Manuel M. Lombardini",
+    "lat": 25.698789,
+    "lng": -100.33155,
+    "descripcion": "NPS: 33.4, FillRate: 96.9%, Damage: 0.33",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX043",
+    "nombre": "Tiendas Six Manuel Doblado",
+    "lat": 25.700459,
+    "lng": -100.303181,
+    "descripcion": "NPS: 27.7, FillRate: 97.1%, Damage: 0.29",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX044",
+    "nombre": "H-E-B Contry",
+    "lat": 25.626203,
+    "lng": -100.274981,
+    "descripcion": "NPS: 24.0, FillRate: 101.9%, Damage: 0.6",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX045",
+    "nombre": "H-E-B Tec",
+    "lat": 25.642921,
+    "lng": -100.285387,
+    "descripcion": "NPS: 0.4, FillRate: 96.6%, Damage: 0.46",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX046",
+    "nombre": "H-E-B Chapultepec",
+    "lat": 25.666667,
+    "lng": -100.267984,
+    "descripcion": "NPS: 15.6, FillRate: 97.6%, Damage: 0.64",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX047",
+    "nombre": "H-E-B Valle Oriente",
+    "lat": 25.641632,
+    "lng": -100.332814,
+    "descripcion": "NPS: 20.8, FillRate: 96.9%, Damage: 0.59",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX048",
+    "nombre": "Soriana Híper Guadalupe",
+    "lat": 25.680364,
+    "lng": -100.251763,
+    "descripcion": "NPS: 51.1, FillRate: 94.7%, Damage: 0.49",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX049",
+    "nombre": "Soriana Super Simon Bolivar",
+    "lat": 25.697159,
+    "lng": -100.343715,
+    "descripcion": "NPS: 36.9, FillRate: 99.3%, Damage: 0.33",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX050",
+    "nombre": "Soriana Express Colon Mty",
+    "lat": 25.686236,
+    "lng": -100.319398,
+    "descripcion": "NPS: -5.3, FillRate: 98.5%, Damage: 0.2",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX051",
+    "nombre": "Soriana Hiper Miguel Alemán",
+    "lat": 25.688401,
+    "lng": -100.255577,
+    "descripcion": "NPS: 36.5, FillRate: 88.0%, Damage: 0.41",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX052",
+    "nombre": "Soriana Súper San Agustin",
+    "lat": 25.650194,
+    "lng": -100.338851,
+    "descripcion": "NPS: 22.3, FillRate: 95.2%, Damage: 0.67",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX053",
+    "nombre": "Soriana Súper Fundidora",
+    "lat": 25.682873,
+    "lng": -100.299539,
+    "descripcion": "NPS: 16.5, FillRate: 99.8%, Damage: 0.54",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX054",
+    "nombre": "Soriana Super Vista Hermosa",
+    "lat": 25.692062,
+    "lng": -100.355292,
+    "descripcion": "NPS: 42.2, FillRate: 94.2%, Damage: 0.25",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX055",
+    "nombre": "Soriana Híper Garza Sada",
+    "lat": 25.661238,
+    "lng": -100.296211,
+    "descripcion": "NPS: 50.6, FillRate: 98.2%, Damage: 0.53",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX056",
+    "nombre": "Soriana Híper Contry",
+    "lat": 25.6393,
+    "lng": -100.2826,
+    "descripcion": "NPS: 48.6, FillRate: 101.4%, Damage: 0.58",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX057",
+    "nombre": "Soriana Híper Las Torres",
+    "lat": 25.629144,
+    "lng": -100.295611,
+    "descripcion": "NPS: 13.2, FillRate: 95.0%, Damage: 0.32",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX058",
+    "nombre": "Walmart Gómez Morin",
+    "lat": 25.643819,
+    "lng": -100.361704,
+    "descripcion": "NPS: 23.8, FillRate: 95.9%, Damage: 0.53",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX059",
+    "nombre": "Walmart Guadalupe",
+    "lat": 25.673223,
+    "lng": -100.202536,
+    "descripcion": "NPS: 36.6, FillRate: 97.2%, Damage: 0.51",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX060",
+    "nombre": "Walmart Eloy Cavazos",
+    "lat": 25.652426,
+    "lng": -100.209585,
+    "descripcion": "NPS: 49.5, FillRate: 96.0%, Damage: 0.27",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX061",
+    "nombre": "Walmart Las Torres",
+    "lat": 25.615776,
+    "lng": -100.273724,
+    "descripcion": "NPS: 20.4, FillRate: 93.9%, Damage: 0.57",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX062",
+    "nombre": "Walmart Plaza Centrika",
+    "lat": 25.70136,
+    "lng": -100.3082,
+    "descripcion": "NPS: 26.3, FillRate: 97.1%, Damage: 0.61",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  },
+  {
+    "codigo": "OX063",
+    "nombre": "Walmart Valle Oriente",
+    "lat": 25.638911,
+    "lng": -100.315987,
+    "descripcion": "NPS: 7.9, FillRate: 94.9%, Damage: 0.72",
+    "encargado": "",
+    "imagen": "assets/default.jpg"
+  }
+]

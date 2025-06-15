@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agendar visita</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .contenedor {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #b90000;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="date"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      background-color: #f9f9f9;
+      margin-bottom: 25px;
+    }
+
+    .horario {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 0.3s forwards;
+    }
+
+    .horario:hover {
+      background-color: #ffeaea;
+    }
+
+    .horario.ocupado {
+      background-color: #eeeeee;
+      color: #888;
+      pointer-events: none;
+    }
+
+    .horario.seleccionado {
+      background-color: #b90000;
+      color: white;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #listaHorarios {
+      margin-bottom: 30px;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 14px;
+      font-size: 16px;
+      background-color: #b90000;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #9d0000;
+    }
+
+    #mensaje {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .modal-content h3 {
+      color: #b90000;
+    }
+
+    .modal-content p {
+      font-size: 16px;
+      margin: 15px 0;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 16px;
+      background-color: #b90000;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h2>📅 Agendar visita</h2>
+
+    <label for="fecha">Selecciona la fecha:</label>
+    <input type="date" id="fecha" />
+
+    <h3 style="color:#b90000; margin-top:30px;">Horarios disponibles</h3>
+    <div id="listaHorarios">Selecciona una fecha primero</div>
+
+    <div class="botones">
+      <button id="botonAgendar">Agendar visita</button>
+      <button id="botonVolver">Volver</button>
+    </div>
+
+    <div id="mensaje"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modalConfirmacion">
+    <div class="modal-content">
+      <h3>✅ ¡Visita agendada!</h3>
+      <p id="textoReservacion"></p>
+      <button onclick="document.getElementById('modalConfirmacion').style.display='none'">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Script funcional -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import {
+      getFirestore, collection, query, where, getDocs, addDoc
+    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+    import { firebaseConfig } from './firebase-config.js';
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const fechaInput = document.getElementById("fecha");
+    const listaHorarios = document.getElementById("listaHorarios");
+    const botonAgendar = document.getElementById("botonAgendar");
+    const botonVolver = document.getElementById("botonVolver");
+    const mensaje = document.getElementById("mensaje");
+    const modal = document.getElementById("modalConfirmacion");
+    const textoReservacion = document.getElementById("textoReservacion");
+
+    let horarioSeleccionado = null;
+    let horariosOcupados = new Set();
+
+    const numeroEmpleado = sessionStorage.getItem("numeroEmpleado");
+    const params = new URLSearchParams(window.location.search);
+    const codigoTienda = params.get("codigo");
+
+    if (!codigoTienda || !numeroEmpleado) {
+      alert("Faltan datos necesarios (tienda o empleado).");
+      window.location.href = "home.html";
+    }
+
+    function generarHorarios() {
+      const horarios = [];
+      for (let h = 9; h <= 17; h++) {
+        horarios.push(`${h.toString().padStart(2, '0')}:00`);
+      }
+      return horarios;
+    }
+
+    async function cargarHorarios(fecha) {
+      horarioSeleccionado = null;
+      horariosOcupados.clear();
+      listaHorarios.innerHTML = "<p>Cargando horarios...</p>";
+
+      const q = query(
+        collection(db, "visitas"),
+        where("codigoTienda", "==", codigoTienda),
+        where("fechaVisita", "==", fecha)
+      );
+      const snapshot = await getDocs(q);
+      snapshot.forEach(doc => {
+        horariosOcupados.add(doc.data().horaVisita);
+      });
+
+      listaHorarios.innerHTML = "";
+      generarHorarios().forEach((hora, i) => {
+        const div = document.createElement("div");
+        div.textContent = hora;
+        div.className = "horario";
+        div.style.animationDelay = `${i * 0.05}s`; // animación secuencial
+        if (horariosOcupados.has(hora)) {
+          div.classList.add("ocupado");
+        }
+        div.addEventListener("click", () => {
+          document.querySelectorAll(".horario").forEach(h => h.classList.remove("seleccionado"));
+          div.classList.add("seleccionado");
+          horarioSeleccionado = hora;
+        });
+        listaHorarios.appendChild(div);
+      });
+    }
+
+    fechaInput.addEventListener("change", () => {
+      const fecha = fechaInput.value;
+      if (fecha) cargarHorarios(fecha);
+    });
+
+    botonAgendar.addEventListener("click", async () => {
+      const fecha = fechaInput.value;
+      if (!fecha || !horarioSeleccionado) {
+        mensaje.textContent = "Selecciona una fecha y horario.";
+        mensaje.style.color = "red";
+        return;
+      }
+
+      const q = query(
+        collection(db, "visitas"),
+        where("codigoTienda", "==", codigoTienda),
+        where("fechaVisita", "==", fecha),
+        where("horaVisita", "==", horarioSeleccionado)
+      );
+      const snapshot = await getDocs(q);
+      if (!snapshot.empty) {
+        mensaje.textContent = "Ese horario ya fue tomado.";
+        mensaje.style.color = "red";
+        cargarHorarios(fecha);
+        return;
+      }
+
+      const numeroReservacion = Date.now().toString();
+      await addDoc(collection(db, "visitas"), {
+        codigoTienda,
+        numeroEmpleado,
+        fechaVisita: fecha,
+        horaVisita: horarioSeleccionado,
+        numeroReservacion,
+        estado: "pendiente"
+      });
+
+      mensaje.textContent = "";
+      textoReservacion.innerHTML = `<strong>Número de reservación:</strong><br>${numeroReservacion}`;
+      modal.style.display = "flex";
+      cargarHorarios(fecha);
+    });
+
+    botonVolver.addEventListener("click", () => {
+      window.history.back();
+    });
+  </script>
+</body>
+</html>
