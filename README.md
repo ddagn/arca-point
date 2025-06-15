@@ -35,6 +35,7 @@ readme_content = """
 
 ## 📦 Estructura del proyecto
 
+```plaintext
 /arca-point
 ├── index.html
 ├── mapa.html
@@ -44,8 +45,11 @@ readme_content = """
 ├── /styles
 ├── /scripts
 ├── /imagenes
-├── /data (tiendas.json, empleados.json)
-└── /firebase (conexión y configuraciones)
+├── /data
+│   ├── tiendas.json
+│   └── empleados.json
+└── /firebase
+    └── conexión y configuraciones
 
 
 ---
