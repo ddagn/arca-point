@@ -64,14 +64,12 @@ Este proyecto **no** utiliza componentes físicos ni integración de hardware. T
 ## 📌 Estado del proyecto
 
 🟢 Proyecto funcional – actualmente en pruebas internas.  
-🚧 Pendiente integración total del reconocimiento facial para producción.
 
 ---
 
 ## 📬 Contacto
 
 Desarrollado por el equipo Prisma, mesa C44.  
-Contacto: **[Daniela Ortiz Blanco]** – `A00840140@tec.mx`
 """
 
 # Guardar como archivo
