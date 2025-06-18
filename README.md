@@ -25,7 +25,7 @@ readme_content = """
 | **Framework de mapas** | [Leaflet.js](https://leafletjs.com)                  |
 | **Base de datos**    | Firebase Firestore y Firebase Storage                  |
 | **Backend (ligero)** | Firebase (solo para persistencia de visitas)           |
-| **Autenticación local** | Reconocimiento facial vía Web API + validación por número |
+| **Autenticación local** | Validación por número de empleado y contraseña |
 | **Notificaciones**   | `flutter_local_notifications`                          |
 | **Agendamiento**     | Calendario dinámico con validación de horarios         |
 | **Visual Studio Code** | Editor de código principal                           |
